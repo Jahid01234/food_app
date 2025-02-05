@@ -1,5 +1,5 @@
 import 'package:food_app_with_getx/resources/routes/routes_name.dart';
-import 'package:food_app_with_getx/view/pages/details_page.dart';
+import 'package:food_app_with_getx/view/pages/product_details_page.dart';
 import 'package:food_app_with_getx/view/pages/home_page.dart';
 import 'package:food_app_with_getx/view/pages/login_page.dart';
 import 'package:food_app_with_getx/view/pages/main_button_nav_page.dart';
@@ -38,8 +38,8 @@ class AppRoutes{
     ),
 
     GetPage(
-        name: RoutesName.detailsPage,
-        page: ()=> const DetailsPage(),
+        name: RoutesName.productDetailsPage,
+        page: ()=> const ProductDetailsPage(),
         transition: Transition.downToUp,
         transitionDuration: const Duration(seconds: 2)
     ),

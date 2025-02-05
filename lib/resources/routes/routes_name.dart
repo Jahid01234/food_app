@@ -4,5 +4,5 @@ class RoutesName{
   static const String loginPage ='/login_page';
   static const String mainButtonNavPage ='/main_button_nav_page';
   static const String homePage ='/home_page';
-  static const String detailsPage ='/details_page';
+  static const String productDetailsPage ='/product_details_page';
 }

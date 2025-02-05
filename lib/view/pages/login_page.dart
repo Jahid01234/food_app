@@ -96,7 +96,7 @@ class LoginPage extends StatelessWidget {
                             Get.toNamed(RoutesName.mainButtonNavPage);
                           }
                         },
-                        title: "Login In",
+                        title: "Log In",
                         bgColor: AppColor.primary,
                       ),
                       const SizedBox(height: 10),

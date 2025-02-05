@@ -2,7 +2,7 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:food_app_with_getx/resources/color/app_color.dart';
-import 'package:food_app_with_getx/view/pages/details_page.dart';
+import 'package:food_app_with_getx/view/pages/product_details_page.dart';
 import 'package:food_app_with_getx/view/pages/home_page.dart';
 import 'package:food_app_with_getx/view_models/controller/main_button_nav_controller.dart';
 import 'package:get/get.dart';
@@ -21,7 +21,7 @@ class MainButtonNavPage extends StatelessWidget {
             index: controller.tabIndex.value,
             children: const [
               HomePage(),
-              DetailsPage()
+              ProductDetailsPage()
             ],
           ),
           bottomNavigationBar: AnimatedBottomNavigationBar.builder(

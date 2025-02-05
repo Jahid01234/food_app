@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:food_app_with_getx/data/model/product_model.dart';
 import 'package:food_app_with_getx/resources/color/app_color.dart';
+import 'package:food_app_with_getx/resources/routes/routes_name.dart';
 import 'package:food_app_with_getx/view/widgets/category_tab.dart';
 import 'package:food_app_with_getx/view/widgets/product_item.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -103,8 +105,10 @@ class HomePage extends StatelessWidget {
                     color: AppColor.black.withOpacity(0.03),
                     blurRadius: 6,
                     spreadRadius: 6,
-                    offset: const Offset(0, 0)),
-              ]),
+                    offset: const Offset(0, 0),
+                ),
+              ],
+          ),
           child: SvgPicture.asset(
             "assets/icons/filter.svg",
             height: 30,
@@ -176,15 +180,27 @@ class HomePage extends StatelessWidget {
         const SizedBox(height: 8),
         Column(
           children: List.generate(
-              productsModel.length, (index) =>
-              ProductItem(
-                id: productsModel[index]['id'],
-                title: productsModel[index]['title'],
-                description: productsModel[index]['description'],
-                calory: productsModel[index]['calories'],
-                price: productsModel[index]['price'],
-                image: productsModel[index]['image'],
+            productsModel.length, (index) {
+            var product = productsModel[index];
+            return GestureDetector(
+              onTap: () {
+                Get.toNamed(
+                  RoutesName.productDetailsPage,
+                  // arguments: {
+                  //   'data': product,
+                  // },
+                );
+              },
+              child: ProductItem(
+                id: product['id'],
+                title: product['title'],
+                description: product['description'],
+                calory: product['calories'],
+                price: product['price'],
+                image: product['image'],
               ),
+            );
+           },
           ),
         ),
       ],
